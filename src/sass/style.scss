@@ -9,13 +9,20 @@
     margin: 0;
     padding: 0;
 }
- .container {
+.container {
     width: 1140px;
     margin: 0 auto;
- }
+}
+
+.devider {
+    width: 60px;
+    height: 3px;
+    background-color: $main-color;
+}
 
 @import 'blocks/promo'; 
 @import 'blocks/title';
 @import 'blocks/button';
 @import 'blocks/sidepanel';
 @import 'blocks/menu';
+@import 'blocks/about';
