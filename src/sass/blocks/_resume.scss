@@ -27,7 +27,7 @@
         &-title {
             position: relative;
             padding-left: 35px;
-            &:before {
+            &:before { /* это малнький кружок  */
                 content: '';
                 position: absolute;
                 width: 15px;
@@ -43,7 +43,7 @@
             list-style-type: none;
             li {
                 position: relative;
-                &:after {
+                &:after { /* здесь реализована вертикальная палочка */
                     content: '';
                     width: 1px;
                     height: calc(100% + 14px);
@@ -57,7 +57,7 @@
     }
     &__item {
         position: relative;
-        &::before {
+        &::before { /* это горизонтальная палочка */
             content: '';
             height: 1px;
             width: 43px;
