@@ -9,3 +9,10 @@ hamburger.addEventListener('click',() => { /* при клике на hamburge, �
 closeElem.addEventListener('click',() => { /* при клике на крестик(closeElem) будет убираться(remove) класс активности active у menu */
     menu.classList.remove('active');
 });
+
+const counters = document.querySelectorAll('.skills__ratings-counter'),
+        lines = document.querySelectorAll('.skills__ratings-line span')
+
+counters.forEach( (item, i) => {
+        lines[i].style.width = item.innerHTML;
+});
