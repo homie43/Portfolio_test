@@ -18,7 +18,6 @@
         grid-template-rows: repeat(2, 1fr);
         row-gap: 5px;
         justify-content: space-between;
-        align-content: space-between;
         &-title {
             position: relative;
             &:before {
@@ -34,6 +33,7 @@
             }
         }
         &-cost {
+            justify-self: end;
             font-weight: bold;
             font-size: 14px;
             line-height: 21px;
