@@ -450,19 +450,23 @@
 
                     <form action="#" class="contacts__form">
                         <div class="contacts__input">
-                            <input name="name" id="name" type="text"> <!-- добавялем атрибут name -->
+                            <input required name="name" id="name" type="text"> <!-- добавялем атрибут name --> <!-- так же добавим атрибут required, обязывающий заполнить эту форму -->
                             <label for="name">Ваше имя</label> <!-- с помощью этого тега    , согздадим текст, который налазиет на форму, у инпута создаем id, а label также даем for="name" -->
                         </div>
                         <div class="contacts__input">
-                            <input name="email" id="email" type="email">
+                            <input required name="email" id="email" type="email">
                             <label for="email">Ваша почта</label>
                         </div>
                         <div class="contacts__textarea">
                             <textarea name="text" id="text"></textarea>
                             <label for="text">Ваше сообщение</label>
                         </div>
-                        <div> <!-- создали обертку, для того чтоб кнопка не растягивалась по ширине колонки -->
+                        <div class="contacts__triggers"> <!-- создали обертку, для того чтоб кнопка не растягивалась по ширине колонки -->
                             <button class="contacts__btn btn">Отправить сообщение</button>
+                            <div class="contacts__policy">
+                                <input required type="checkbox"> <!-- тот самый квадратик с галочкой, а тег required обязателен  -->
+                                <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                            </div>
                         </div>
                     </form>
 
