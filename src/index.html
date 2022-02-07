@@ -103,7 +103,7 @@
         </div> <!-- создаем его внутри promo, чтобы он был внутри первого экрана, если необходимо чтоб он скролился со всей страницей, то выносим его выше, за тег promo -->
         <div class="container">
             <div class="title title_fz16 promo__subtitle">Меня зовут Александра Смит</div>
-            <h1 class="title title_fz48">Я web-разработчик <br> из города Москва</h1>
+            <h1 class="title title_fz48 promo__title">Я web-разработчик <br> из города Москва</h1>
             <div class="promo__btns">
                 <a href="#" class="promo__link btn">Портфолио</a>
                 <a href="#" class="promo__link">Про меня</a>
@@ -116,41 +116,56 @@
             <div class="about__wrapper">
 
                 <div class="about__photo">
-                    <img src="img/main_photo.jpg" alt="photo">
+                    <!-- <img srcset="img/main_photo-min.jpg 300w, 
+                                img/main_photo.jpg 400w"
+                        sizes="(max-width: 576px) 280px, 
+                                (min-width: 577px) 400px"
+                     src="img/main_photo.jpg" alt="photo"> -->
+                     
+                     <picture>
+                         <source media="(max-width: 576px)" srcset="img/main_photo-min.jpg">
+                         <source media="(min-width: 577px)" srcset="img/main_photo.jpg">
+                         <img src="mg/main_photo.jpg" alt="photo">
+                     </picture>
+                     
+                     <!-- <picture>
+                        <source type="image/webp" srcset="img/main_photo.webp"> таким образом мы можем загрузить в версту изображения разного формата, и если браузер будет поддерживать формат, он будет згаружать его
+                        <img src="mg/main_photo.jpg" alt="photo"> а если не поддерживает, то загружает по умолчанию этот - классический формат
+                    </picture> -->
                 </div>
 
                 <div class="about__descr">
-                    <h2 class="about__title title_fz16">Про меня</h2>
-                    <div class="title title_fz36">Меня зовут Александра</div>
+                    <h2 class="title title_fz16 about__title">Про меня</h2>
+                    <div class="title title_fz36 about__subtitle">Меня зовут Александра</div>
                     <div class="devider"></div>
                     <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
                 </div>
-                <div class="about__scills">
-                    <div class="about__scills-item">
-                        <div class="about__scills-sircle">
+                <div class="about__skills">
+                    <div class="about__skills-item">
+                        <div class="about__skills-sircle">
                             <img src="icons/about_me/web_development.svg" alt="web">
                         </div>
                         <div>
                             <div class="title title_fz14">Web-разработка</div>
-                            <div class="about__scills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="about__skills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                         </div>
                     </div>
-                    <div class="about__scills-item">
-                        <div class="about__scills-sircle">
+                    <div class="about__skills-item">
+                        <div class="about__skills-sircle">
                             <img src="icons/about_me/mobile_dev.svg" alt="mobile">
                         </div>
                         <div>
                             <div class="title title_fz14">Разработка приложений</div>
-                            <div class="about__scills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="about__skills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                         </div>
                     </div>
-                    <div class="about__scills-item">
-                        <div class="about__scills-sircle">
+                    <div class="about__skills-item">
+                        <div class="about__skills-sircle">
                             <img src="icons/about_me/design.svg" alt="design">
                         </div>
                         <div>
                             <div class="title title_fz14">UI/UX Design</div>
-                            <div class="about__scills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="about__skills-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                         </div>
                     </div>
                 </div>
@@ -373,7 +388,6 @@
                     <img src="img/works/mac.jpg" alt="mac">
                 </a>
             </div>
-
         </div>
     </section>
 
@@ -450,7 +464,7 @@
 
                     <form action="#" class="contacts__form">
                         <div class="contacts__input">
-                            <input required name="name" id="name" type="text"> <!-- добавялем атрибут name --> <!-- так же добавим атрибут required, обязывающий заполнить эту форму -->
+                            <input required name="name" id="name" type="text"> <!-- добавялем атрибут name, так же добавим атрибут required, обязывающий заполнить эту форму -->
                             <label for="name">Ваше имя</label> <!-- с помощью этого тега    , согздадим текст, который налазиет на форму, у инпута создаем id, а label также даем for="name" -->
                         </div>
                         <div class="contacts__input">
@@ -464,16 +478,15 @@
                         <div class="contacts__triggers"> <!-- создали обертку, для того чтоб кнопка не растягивалась по ширине колонки -->
                             <button class="contacts__btn btn">Отправить сообщение</button>
                             <div class="contacts__policy">
-                                <input required type="checkbox"> <!-- тот самый квадратик с галочкой, а тег required обязателен  -->
+                                <input required type="checkbox"> <!-- тот самый квадратик с галочкой, а тег required обязателен --> 
                                 <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
                             </div>
                         </div>
                     </form>
-
+                </div>
             </div>
         </div>
     </section>
-
 
     <script src="js/script.js"></script>
 </body>

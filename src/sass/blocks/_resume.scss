@@ -1,5 +1,5 @@
 .resume {
-    padding: 120px;
+    padding-top: 120px;
     .devider {
         margin: 0 auto;
         margin-top: 25px;
@@ -14,7 +14,7 @@
         &-title {
             position: relative;
             padding-left: 35px;
-            &:before { /* это малнький кружок  */
+            &:before { /* это маленький кружок  */
                 content: '';
                 position: absolute;
                 width: 15px;
